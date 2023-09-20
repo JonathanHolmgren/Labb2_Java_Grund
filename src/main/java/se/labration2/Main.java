@@ -1,44 +1,82 @@
 package se.labration2;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        ArrayList<Shape> shapes = run();
+        Set<Shape> shapes = run();
+        ArrayList<Shape> shapesArrayList = runArrayList();
 
-        shapes.sort(null);
-
+        System.out.println("---------HashSet--------");
         for (Shape shape : shapes) {
+            System.out.println("Area: " + shape.getArea());
+        }
+        System.out.println("---------ArrayList--------");
+        for (Shape shape : shapesArrayList) {
             System.out.println("Area: " + shape.getArea());
         }
 
     }
 
-    public static ArrayList<Shape> run(){
+    public static Set<Shape> run(){
 
-        ArrayList<Shape> shapes = new ArrayList<>();
+
+        Set<Shape> shapes = new HashSet<>();
+
 
         Shape circle1 = Shape.createShape(3);
         Shape circle2 = Shape.createShape(5);
         Shape circle3 = Shape.createShape(7);
-
+        Shape circle4 = Shape.createShape(7);
         Shape rectangle1 = Shape.createShape(5, 6);
         Shape rectangle2 = Shape.createShape(4, 8);
-        Shape rectangle3 = Shape.createShape(6, 7);
+        Shape rectangle3 = Shape.createShape(4, 8);
+        Shape rectangle4 = Shape.createShape(6, 7);
 
 
         shapes.add(circle1);
         shapes.add(circle2);
         shapes.add(circle3);
+        shapes.add(circle4);
         shapes.add(rectangle1);
         shapes.add(rectangle2);
         shapes.add(rectangle3);
+        shapes.add(rectangle4);
 
         return shapes;
     }
 
+    public static ArrayList<Shape> runArrayList(){
+
+
+        ArrayList<Shape> shapes = new ArrayList<>();
+
+
+        Shape circle1 = Shape.createShape(3);
+        Shape circle2 = Shape.createShape(5);
+        Shape circle3 = Shape.createShape(7);
+        Shape circle4 = Shape.createShape(7);
+        Shape rectangle1 = Shape.createShape(5, 6);
+        Shape rectangle2 = Shape.createShape(4, 8);
+        Shape rectangle3 = Shape.createShape(4, 8);
+        Shape rectangle4 = Shape.createShape(6, 7);
+
+
+        shapes.add(circle1);
+        shapes.add(circle2);
+        shapes.add(circle3);
+        shapes.add(circle4);
+        shapes.add(rectangle1);
+        shapes.add(rectangle2);
+        shapes.add(rectangle3);
+        shapes.add(rectangle4);
+
+        return shapes;
+    }
 
 }
 
